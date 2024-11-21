@@ -8,6 +8,7 @@ while(True):
         print("wrong guess , guess a smaller number")
     elif( guess < r ):
         print("wrong guess , guess a greater number")
-    elif( guess = r):
-        print("yahoo! congratulation you made it")
+    elif( guess == r ):
+        print("yahoo! you won")
         break;
+                                                    
