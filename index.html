@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Number Guessing Game</h1>
+        <p>Guess the number between 1 and 50!</p>
+        
+        <form action="{{ url_for('guess') }}" method="post">
+            <input type="number" name="guess" placeholder="Enter your guess" required>
+            <button type="submit">Submit Guess</button>
+        </form>
+
+        <div id="message">
+            <p>{{ message }}</p>
+        </div>
+
+        <p id="attempts-left">Attempts left: {{ attempts }}</p>
+    </div>
+</body>
+</html>
