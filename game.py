@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 import random
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.getcwd())  # Set current directory as template folder
 
-# Store the random number in a global variable for simplicity
 random_number = random.randint(1, 50)
 attempts = 5
 
@@ -16,7 +16,6 @@ def index():
 def guess():
     global random_number, attempts
 
-    # Get the guess from the form
     guess = int(request.form['guess'])
     message = ""
     
